@@ -6,6 +6,7 @@
   align-items: center;
   position: fixed;
   width: 100%;
+  padding-top: 16px;
 }
 nav{
   width: 100%;
@@ -29,10 +30,12 @@ nav a:before{
   height: 100%;
   background: #FF8C00;
   animation:out 0.4s linear 1 both;
+  border-radius: 10px;
 }
 nav a:hover:before{
   z-index: -1;
   animation:in 0.4s linear 1 both;
+  border-radius: 10px;
 }
 @keyframes in{
   0%{

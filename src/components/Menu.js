@@ -1,11 +1,13 @@
 import React from "react"
-import {BrowserRouter as Router,
+import {HashRouter as Router,
         Switch,
         Route,
         Link} from "react-router-dom";
 
 import '../styles/Menu.scss'
 import Mainpage from "./Mainpage"
+import Footer from "./Footer"
+import Rpl from "./rpl"
 
 class Menu extends React.Component{
     render(){
@@ -21,6 +23,9 @@ class Menu extends React.Component{
                     </nav>
                 </div>
                 <Switch>
+                    <Route path="/rpl">
+                        <Rpl />
+                    </Route>
                     <Route path="/">
                         <Mainpage />
                     </Route>
