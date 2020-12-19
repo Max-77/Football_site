@@ -39,11 +39,11 @@ app.use(express.urlencoded({extended: true}));
 const Rating = require('./models/rating')
 // const path = require('path')
 app.post('/rate', (req,res)=>{
-    if (req.cookies['vote']==='true'){
-        console.log('you have voted')
-        res.redirect('/#/rpl');
-        return;
-    }
+    // if (req.cookies['vote']==='true'){
+    //     console.log('you have voted');
+    //     res.redirect('/#/rpl');
+    //     return;
+    // }
     res.cookie('vote', 'true', { expires: new Date(Date.now() + 900000)});
     let name = req.query.name;
     console.log(name);
@@ -80,7 +80,7 @@ app.post('/rate', (req,res)=>{
 
 app.get('/max', (req,res)=>{
     Rating.findOne({})
-        .sort('-rating').limit(1)
+        .sort({'rating': -1, 'count': -1}).limit(1)
         .then(found=>{
             console.log(found.name + " " + found.rating)
         })
