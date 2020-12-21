@@ -1,4 +1,4 @@
-![Screen](./screenshot.png)
+![Screen](public/screenshot.png)
 
 - `version 1.0.0`
   - Main page only.
