@@ -1,0 +1,45 @@
+.best{
+  font-family: 'Oswald', sans-serif;
+  background-color: lighten(#121212, 10%);
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 12.5%;
+  width: 75%;
+  font-size: 125%;
+  border-radius: 10px;
+  color: #969696;
+}
+.video{
+  margin-left: 5%;
+  margin-top: 1em;
+  width: 90%;
+}
+
+.video video{
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  width: 80%;
+}
+
+.rating-result {
+  width: 265px;
+  margin: 0 auto;
+}
+
+.rating-result span {
+  padding: 0;
+  font-size: 32px;
+  margin: 0 3px;
+  line-height: 1;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+
+.rating-result > span:before {
+  content: '★';
+}
+
+.rating-result > span.active {
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}

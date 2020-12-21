@@ -3,7 +3,7 @@ import "../styles/Rpl.scss"
 
 import goal1 from "../../public/video/RPL/video1.webm"
 import goal2 from "../../public/video/RPL/video2.webm"
-
+import ico from "../../public/rpl_ico.jpeg"
 const videos = [goal1, goal2];
 const name_videos=["video1", "video2"]
 let str = "/rate?name="
@@ -51,8 +51,7 @@ class Rpl extends React.Component{
                 <div className="video">
                     {this.state.isShow.map((item, i) => (
                     <div key={item}>
-
-                    <video src={videos[i]} controls/>
+                    <video src={videos[i]} controls poster={ico}/>
                     <form method="POST" action={str+name_videos[i]} id={'form_id_'+i}>
                         <div className="rating">
                             <input type="radio"
@@ -65,7 +64,7 @@ class Rpl extends React.Component{
                                    id={"star-4-"+i}
                                    name={"user_rating"}
                                    value="4"
-                                   onChange={()=>this.handleChange}/>
+                                   onChange={this.handleChange}/>
                             <label htmlFor={"star-4-"+i} title="Оценка «4»"> </label>
                             <input type="radio"
                                    id={"star-3-"+i}

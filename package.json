@@ -8,6 +8,8 @@
     "start-serve": "webpack serve"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "clean-webpack-plugin": "^3.0.0",
     "cookie-parser": "^1.4.5",

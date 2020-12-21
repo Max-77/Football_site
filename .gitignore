@@ -1,4 +1,6 @@
 node_modules
 .idea
-.babelrc
+yarn.lock
+yarn-error.log
+dist
 

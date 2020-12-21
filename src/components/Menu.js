@@ -6,8 +6,8 @@ import {HashRouter as Router,
 
 import '../styles/Menu.scss'
 import Mainpage from "./Mainpage"
-import Footer from "./Footer"
 import Rpl from "./rpl"
+import Best from "./Best"
 
 class Menu extends React.Component{
     render(){
@@ -15,16 +15,20 @@ class Menu extends React.Component{
             <Router>
                 <div class="menu">
                     <nav>
-                        <Link to="/"><a>Main page</a></Link>
-                        <Link to="/rpl"><a>Russian Premier League</a></Link>
-                        <Link to="/epl"><a>English Premier League</a></Link>
-                        <Link to="/laliga"><a>LaLiga</a></Link>
-                        <Link to="/legaseriea"><a>Lega Serie A</a></Link>
+                        <Link to="/"><a>Main&nbsp;page</a></Link>
+                        <Link to="/rpl"><a>Russian&nbsp;Premier&nbsp;League</a></Link>
+                        <Link to="/epl"><a>English&nbsp;Premier&nbsp;League</a></Link>
+                        <Link to="/laliga"><a>LaLiga</a> </Link>
+                        <Link to="/legaseriea"><a>Lega&nbsp;Serie&nbsp;A </a></Link>
+                        <Link to="/best"><a>See&nbsp;best&nbsp;rated&nbsp;goals</a></Link>
                     </nav>
                 </div>
                 <Switch>
                     <Route path="/rpl">
                         <Rpl />
+                    </Route>
+                    <Route path="/best">
+                        <Best />
                     </Route>
                     <Route path="/">
                         <Mainpage />
