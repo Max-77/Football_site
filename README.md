@@ -1,5 +1,3 @@
-![Screen](public/screenshot.png)
-
 - `version 1.0.0`
   - Main page only.
 - `version 1.1`
@@ -14,3 +12,4 @@
   - Added function - see a best rated video
   - Minor improvements
   
+![Screen](public/screenshot.png)
