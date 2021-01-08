@@ -3,7 +3,7 @@ import "../styles/Rpl.scss"
 
 import goal1 from "../../back/assets/public/videos/RPL/video1.webm"
 import goal2 from "../../back/assets/public/videos/RPL/video2.webm"
-import ico from "../../public/rpl_ico.jpeg"
+import ico from "../public/rpl_ico.jpeg"
 const videos = [goal1, goal2];
 const name_videos=["video1", "video2"]
 let str = "/api/rate?name="

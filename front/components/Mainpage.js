@@ -1,10 +1,10 @@
 import React from "react"
 import '../styles/Mainpage.scss'
 
-import Alliance from "../../public/Alliance.jpg"
-import Web from "../../public/Web.jpg"
-import CampNou from "../../public/campnou.jpg"
-import Borr from "../../public/borr.jpg"
+import Alliance from "../public/Alliance.jpg"
+import Web from "../public/Web.jpg"
+import CampNou from "../public/campnou.jpg"
+import Borr from "../public/borr.jpg"
 
 const imagesArr = [Alliance, Web, CampNou, Borr];
 

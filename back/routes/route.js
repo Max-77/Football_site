@@ -59,13 +59,8 @@ route.get('/api/getMaxRpl', (req,res)=>{
         })
 })
 
-route.get('/api/assets', (req,res)=>{
-    res.sendFile("assets/video1.webm", { root: __dirname })
-})
-
 route.get('*', (req,res)=>{
     res.send('Error. Page not found');
 })
-
 
 module.exports = route;

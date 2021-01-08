@@ -2,17 +2,16 @@ import React from "react"
 import "../styles/Best.scss"
 const leagueNames = ['Russian Premier League']
 
-import ico_rpl from "../../public/rpl_ico.jpeg"
-const name_videos=["video1", "video2"]
+import ico_rpl from "../public/rpl_ico.jpeg"
 const host = "http://localhost:8080/api/getVideo?league="
 
 class Best extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            bestRpl: {name: "",
-                      rating: "",
-                      count: ""},
+            bestRpl: {name: "video1",
+                      rating: "0",
+                      count: "0"},
             arrRpl: [0,0,0,0,0]
         }
     }
@@ -64,15 +63,5 @@ class Best extends React.Component{
             </div>
         )
     }
-    getVideoRpl(str){
-        if (str.match(/video/)) {
-            let i
-            for (i=0;i<2;i++){
-                if (name_videos[i]===str)
-                    break;
-            }
-            return videos[i];
-        }
-    }
-};
+}
 export default Best

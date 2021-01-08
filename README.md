@@ -17,4 +17,5 @@
     - Webpack-middleware removed, proxy in using
   - Starting from this version, videos uploading from
   a backend (not from a frontend).
-![Screen](public/screenshot.png)
+  - Minor improvements.
+![Screen](front/public/screenshot.png)
