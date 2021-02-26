@@ -3,7 +3,7 @@ import "../styles/Best.scss"
 const leagueNames = ['Russian Premier League']
 
 import ico_rpl from "../public/rpl_ico.jpeg"
-const host = "http://localhost:8080/api/getVideo?league="
+const host = "http://localhost:3000/api/getVideo?league="
 
 class Best extends React.Component{
     constructor(props) {

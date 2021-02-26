@@ -1,7 +1,8 @@
 const {Router} = require('express')
 const route = Router();
 
-const Rating = require('../models/rating')
+const getMax = require('../database/actionsDB').getMax;
+const changeRating = require('../database/actionsDB').changeRating;
 
 route.post('/api/rate', (req,res)=>{
     let name = req.query.name;
@@ -18,48 +19,29 @@ route.post('/api/rate', (req,res)=>{
         res.redirect('/#/rpl');
         return;
     }
-    Rating.findOne({name: name})
-        .then(ifFound=>{
-            if (ifFound){
-                console.log(name + ' was found');
-                let current_rating = ifFound.rating;
-                let current_count = ifFound.count;
-                let new_rating = (current_rating*current_count+user_rating)/(current_count+1);
-
-                let newLine = new Rating({name:name, rating:new_rating, count:current_count+1})
-
-                ifFound.remove();
-
-                newLine.save((err)=>{
-                    if (err) console.log('Error: ' + err);
-                    console.log('Changed!');
-                });
-            }
-            else {
-                console.log(name + " wasn't found. Creating...");
-                let newLine = new Rating({name:name , rating: user_rating, count:1})
-                newLine.save((err)=>{
-                    if (err) console.log('Error: ' + err);
-                    console.log('Done!');
-                });
-            }
-            res.redirect("/#/rpl")
-        })
-        .catch(err=>{console.log(err)})
+    changeRating(name,user_rating)
+        .then(console.log('Edited'))
+        .catch(err=>{console.log(`Error. ${err.message}`)});
+    res.redirect("/#/rpl");
 })
 
 route.get('/api/getMaxRpl', (req,res)=>{
-    Rating.findOne({})
-        .sort({'rating': -1, 'count': -1}).limit(1)
-        .then(found=>{
+    getMax()
+        .then((found)=>{
             console.log(found.name + " " + found.rating + " " + found.count)
             res.json({"name": found.name,
-                           "rating": found.rating,
-                           "count": found.count})
+                "rating": found.rating,
+                "count": found.count});
+            res.send.json({"name": found.name,
+                "rating": found.rating,
+                "count": found.count});
+
         })
+        .catch((err)=>{console.log('Error. ', err.message)});
 })
 
 route.get('*', (req,res)=>{
+    console.log('Error. Page not found.');
     res.send('Error. Page not found');
 })
 

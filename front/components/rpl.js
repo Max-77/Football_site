@@ -7,7 +7,7 @@ import ico from "../public/rpl_ico.jpeg"
 const videos = [goal1, goal2];
 const name_videos=["video1", "video2"]
 let str = "/api/rate?name="
-const host = "http://localhost:8080/api/getVideo?league=RPL&videoName="
+const host = "http://localhost:3000/api/getVideo?league=RPL&videoName="
 
 class Rpl extends React.Component{
     constructor(props){

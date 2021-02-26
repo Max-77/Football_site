@@ -11,11 +11,13 @@
   - Modified classes in Rpl.js. 
   - Added function - see a best rated video
   - Minor improvements
-- `version 1.4` - current
+- `version 1.4`
   - Project was restructured:
     - Frontend and backend in different dirs
     - Webpack-middleware removed, proxy in using
   - Starting from this version, videos uploading from
   a backend (not from a frontend).
   - Minor improvements.
+- `version 1.5` - current
+  - Postgres, sequelize, docker-compose
 ![Screen](front/public/screenshot.png)

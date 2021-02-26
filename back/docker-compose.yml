@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=football_db
+    container_name: football_db
+  web:
+    image: project_football
+    command: yarn start-all
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
